@@ -41,6 +41,7 @@
   button,
   textarea{
       font: 500 1.6rem Popping;
+      color: var(--color-text-base);
   }
   .container{
       width: 90%;
