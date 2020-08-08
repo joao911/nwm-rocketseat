@@ -2,6 +2,8 @@ import React from 'react'
 import PageHeader from '../../components/PageHeader'
 import Warning from '../../assets/images/icons/warning.svg'
 import Input from '../../components/input';
+import Textarea from '../../components/Textarea';
+import Select from '../../components/Select';
 
 import './styles.css'
 
@@ -18,11 +20,48 @@ function TeacherForm(){
                     <Input name="Nome completo" label="name"/>
                     <Input name="Avatar" label="avatar"/>
                     <Input name="WhatsApp" label="whatsapp"/>
+                    <Textarea name="bio" label="Biografia"/>
                 </fieldset>
                 <fieldset>
                     <legend>Sobre a aula</legend>
-                    <Input name="Subject" label="Matéria"/>
+                    <Select
+                    name="Subject"
+                    label="Matéria"
+                    options={[
+                        {value:'Artes', label:'Artes'},
+                        {value:'Biologia', label:'Biologia'},
+                        {value:'Ciências', label:'Ciências'},
+                        {value:'educação Fisíca', label:'educação Fisíca'},
+                        {value:'Fisíca', label:'Fisíca'},
+                        {value:'Geografia', label:'Geografia'},
+                        {value:'Históroa', label:'Históroa'},
+                        {value:'Matemática', label:'Matemática'},
+                        {value:'Português', label:'Português'},
+                        {value:'Quḿica', label:'Quḿica'},
+
+                    ]}
+                    />
                     <Input name="cost" label="Custo da sua hora por aula"/>
+                </fieldset>
+                <fieldset>
+                    <legend>Horários disponíveis
+                         <button type="button"> + Novo Horário</button>
+                    </legend>
+                    <div className="schedule-item">
+                        <Select
+                        name="week_day"
+                        label="Dia da Semana"
+                        options={[
+                         {value:'0', label:'Domingo'},
+                         {value:'1', label:'Segunda-feira'},
+                         {value:'2', label:'Terça-feira'},
+                         {value:'3', label:'Quarta-feira'},
+                         {value:'4', label:'Quinta-feira'},
+                         {value:'5', label:'Sexta-feira'},
+                         {value:'6', label:'Sabado'},                        
+                        ]}
+                        />
+                    </div>
                 </fieldset>
                 <footer>
                     <p>
